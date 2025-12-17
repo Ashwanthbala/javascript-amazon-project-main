@@ -1,8 +1,8 @@
-import {cart, addToCart} from '../data/cart.js'
-import {products} from '../data/products.js'
+import {cart, addToCart} from "../data/cart.js"
+import {products} from "../data/products.js"
 
 let product_html = '';
-
+ 
 
 products.forEach((product) => {
     product_html += `
@@ -71,6 +71,23 @@ function update_quantity() {
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
 
 }
+
+function initialize_cart() {
+    let cartQuantity = 0;
+    cart.forEach((item) => {
+        cartQuantity += item.quantity
+
+    })
+
+    cons
+
+    document.querySelector('js-cart-quantity-localstorage').innerHTML = cartQuantity
+
+}
+
+initialize_cart()
+
+
 document.querySelectorAll('.js-add-to-cart')
  .forEach((button) => {
     button.addEventListener('click',() => {
